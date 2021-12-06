@@ -25,7 +25,20 @@
 export default {
   data() {
     return {
-      id: this.$route.params.id
+      id: this.$route.params.id,
+      slug : this.$route.params.slug,
+      title : this.$route.params.title
+    };
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        { name: "twitter:title", content: this.title },
+        { name: "twitter:description", content: this.slug },
+        { name: "twitter:image", content: "https://i.imgur.com/UYP2umJ.png" },
+        { name: "twitter:card", content: "summary_large_image" }
+      ]
     };
   },
   computed: {
