@@ -19,6 +19,8 @@
 <script>
 import Logo from "~/components/Logo.vue";
 
+import { mapActions } from 'vuex'
+
 export default {
   components: {
     Logo
@@ -35,10 +37,17 @@ export default {
     };
   },
   computed: {
+    
     posts() {
       return this.$store.state.posts.all;
     }
-  }
+  },
+  created(){
+    this.getData();
+  },
+  methods: {
+    ...mapActions(['getData'])
+  },
 };
 </script>
 

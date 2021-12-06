@@ -17,7 +17,11 @@
   </div>
 </template>
 
+
+
 <script>
+
+
 export default {
   data() {
     return {
@@ -31,7 +35,9 @@ export default {
     relatedPosts() {
       return this.$store.state.posts.all.filter(post => post.id !== this.id);
     }
-  }
+  },
+ 
+  
 };
 </script>
 
