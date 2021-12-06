@@ -18,10 +18,10 @@
 
 <script>
 import Logo from "~/components/Logo.vue";
-
-import { mapActions } from 'vuex'
+import { mapActions} from 'vuex'
 
 export default {
+  
   components: {
     Logo
   },
@@ -42,12 +42,10 @@ export default {
       return this.$store.state.posts.all;
     }
   },
-  created(){
-    this.getData();
+  async asyncData({store}){
+    await store.dispatch('getData')
   },
-  methods: {
-    ...mapActions(['getData'])
-  },
+ 
 };
 </script>
 

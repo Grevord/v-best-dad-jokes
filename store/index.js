@@ -2,7 +2,6 @@ export const state = () => ({});
 export const actions = {
     async getData(){
        this.$axios.get('http://localhost:3001/posts').then((response) =>{
-        console.log(response.data);
         this.commit('setPosts', response.data);
        })
        
